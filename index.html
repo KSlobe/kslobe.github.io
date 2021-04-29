@@ -46,7 +46,7 @@
     isPost : false,
     lang   : 'en'
   };
-</script>
+</script><script src="https://cdn.jsdelivr.net/npm/exif-js@2/exif.min.js"></script>
 <title>사진 찍는 문과생의 데이터분석 프로젝트</title>
   
 
@@ -326,6 +326,35 @@
 
 
 
+<script>
+function getExif(target) {
+  const template = "{FocalLength}mm f/{FNumber} {ExposureTime}s";
+  EXIF.getData(target, function() {
+    const tags = EXIF.getAllTags(this);
+    let result = template;
+    for (let [key, value] of Object.entries(tags)) {
+      if (key === 'ExposureTime' && value <= 0.25) {
+        value = '1/' + parseInt(1 / value);
+      }
+      result = result.replace(`{${key}}`, value);
+    }
+    if (result !== template) {
+      const box = document.createElement('div');
+      target.wrap(box);
+      box.classList.add('exif-container');
+      box.insertAdjacentHTML('beforeend', `<div class="exif-metabar"><span>${result}</span></div>`);
+    }
+  });
+}
+
+[...document.querySelectorAll('.post-body img')].forEach(element => {
+  if (element.complete) getExif(element);
+  // `lazyload` compatible
+  element.addEventListener('load', () => {
+    getExif(element);
+  });
+});
+</script>
 
 </body>
 </html>
