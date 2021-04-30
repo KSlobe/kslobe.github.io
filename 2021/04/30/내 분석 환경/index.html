@@ -5,8 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.4.0">
-
-
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -15,23 +13,22 @@
 <link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
-
-<script class="hexo-configurations">
+<script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"kslobe.github.io","root":"/","images":"/images","scheme":"Muse","version":"8.3.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+    var CONFIG = {"hostname":"kslobe.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
-<meta name="description" content="분석 환경   시스템 :         AMD Ryzen 7 3700X 8-Core Processor 3.59 GHz       32GB RAM       Windows 10 Pro         그래픽 카드 :        NVIDIA GeForce RTX 2060    분석 도구   Python :       Anaconda       Jupyter">
+
+  <meta name="description" content="분석 환경시스템 :AMD Ryzen 7 3700X 8-Core Processor 3.59 GHz 32GB RAM Windows 10 Pro       그래픽 카드 : NVIDIA GeForce RTX 2060  분석 도구Python :Anaconda Jupyter Lab PyCharm  R :Rstudio  SQL(Oracle) :Oracle SQL Dev">
 <meta property="og:type" content="article">
 <meta property="og:title" content="내 분석 환경 &#x2F; 도구">
 <meta property="og:url" content="https://kslobe.github.io/2021/04/30/%EB%82%B4%20%EB%B6%84%EC%84%9D%20%ED%99%98%EA%B2%BD/index.html">
-<meta property="og:site_name" content="사진 찍는 문과생의 데이터 분석 프로젝트">
-<meta property="og:description" content="분석 환경   시스템 :         AMD Ryzen 7 3700X 8-Core Processor 3.59 GHz       32GB RAM       Windows 10 Pro         그래픽 카드 :        NVIDIA GeForce RTX 2060    분석 도구   Python :       Anaconda       Jupyter">
+<meta property="og:site_name" content="사진 찍는 문과 출신 아재의 데이터 분석 프로젝트">
+<meta property="og:description" content="분석 환경시스템 :AMD Ryzen 7 3700X 8-Core Processor 3.59 GHz 32GB RAM Windows 10 Pro       그래픽 카드 : NVIDIA GeForce RTX 2060  분석 도구Python :Anaconda Jupyter Lab PyCharm  R :Rstudio  SQL(Oracle) :Oracle SQL Dev">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-04-29T23:43:36.000Z">
-<meta property="article:modified_time" content="2021-04-30T00:38:19.772Z">
+<meta property="article:modified_time" content="2021-04-30T07:28:36.485Z">
 <meta property="article:author" content="KSlobe">
 <meta property="article:tag" content="분석 환경">
 <meta property="article:tag" content="분석 도구">
@@ -51,11 +48,10 @@
 <meta property="article:tag" content="Oracle SQL Developer">
 <meta name="twitter:card" content="summary">
 
-
 <link rel="canonical" href="https://kslobe.github.io/2021/04/30/%EB%82%B4%20%EB%B6%84%EC%84%9D%20%ED%99%98%EA%B2%BD/">
 
 
-<script class="page-configurations">
+<script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
@@ -63,67 +59,61 @@
     isPost : true,
     lang   : 'en'
   };
-</script><script src="https://cdn.jsdelivr.net/npm/exif-js@2/exif.min.js"></script>
-<title>내 분석 환경 / 도구 | 사진 찍는 문과생의 데이터 분석 프로젝트</title>
+</script>
+<script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
+  <title>내 분석 환경 / 도구 | 사진 찍는 문과 출신 아재의 데이터 분석 프로젝트</title>
   
+
+
 
 
 
 
   <noscript>
   <style>
-  body { margin-top: 2rem; }
-
+  .use-motion .brand,
   .use-motion .menu-item,
-  .use-motion .sidebar,
+  .sidebar-inner,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header {
-    visibility: visible;
-  }
-
-  .use-motion .header,
-  .use-motion .site-brand-container .toggle,
-  .use-motion .footer { opacity: initial; }
+  .use-motion .collection-header { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle,
-  .use-motion .custom-logo-image {
+  .use-motion .site-subtitle {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line {
-    transform: scaleX(1);
-  }
-
-  .search-pop-overlay, .sidebar-nav { display: none; }
-  .sidebar-panel { display: block; }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
-  <div class="headband"></div>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
 
-  <main class="main">
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <h1 class="site-title">사진 찍는 문과생의 데이터 분석 프로젝트</h1>
-      <i class="logo-line"></i>
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">사진 찍는 문과 출신 아재의 데이터 분석 프로젝트</h1>
+      <span class="logo-line-after"><i></i></span>
     </a>
       <p class="site-subtitle" itemprop="description">궁금한 건 내가 찾아본다는 마음으로 기초부터 시작!</p>
   </div>
@@ -137,99 +127,46 @@
 
 
 
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
 
 
 
 </div>
-        
-  
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-
-  <aside class="sidebar">
-
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
-      <ul class="sidebar-nav">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
-
-      <div class="sidebar-panel-container">
-        <!--noindex-->
-        <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text"> 분석 환경 </span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.1.</span> <span class="nav-text"> 시스템 :  
-</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.2.</span> <span class="nav-text"> 그래픽 카드 : 
-</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text"> 분석 도구 </span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">2.1.</span> <span class="nav-text"> Python :
-</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">2.2.</span> <span class="nav-text"> R :
-</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">2.3.</span> <span class="nav-text"> SQL(Oracle) :
-</span></a></li></ol></li></ol></div>
-        </div>
-        <!--/noindex-->
-
-        <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">KSlobe</p>
-  <div class="site-description" itemprop="description">제가 가지고 있는 통계 지식과 SPSS, Excel 활용으로는 한계를 느끼고 시작한 블로그입니다. 데이터 분석에 대한 기록과 기분전환용으로 작업한 제 사진들이 업로드 될 예정입니다.</div>
-</div>
-<div class="site-state-wrap site-overview-item animated">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives">
-          <span class="site-state-item-count">4</span>
-          <span class="site-state-item-name">posts</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">3</span>
-        <span class="site-state-item-name">categories</span>
-      </div>
-      <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">31</span>
-        <span class="site-state-item-name">tags</span>
-      </div>
-  </nav>
-</div>
-
-
-
-        </div>
-      </div>
-    </div>
-  </aside>
-  <div class="sidebar-dimmer"></div>
-
-
     </header>
 
     
-  <div class="back-to-top" role="button" aria-label="Back to top">
+  <div class="back-to-top">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
 
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
 
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
 
-    <div class="main-inner post posts-expand">
+          <div class="content post posts-expand">
+            
 
-
-  
-
-
-<div class="post-block">
+    
   
   
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://kslobe.github.io/2021/04/30/%EB%82%B4%20%EB%B6%84%EC%84%9D%20%ED%99%98%EA%B2%BD/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -239,36 +176,34 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="사진 찍는 문과생의 데이터 분석 프로젝트">
+      <meta itemprop="name" content="사진 찍는 문과 출신 아재의 데이터 분석 프로젝트">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           내 분석 환경 / 도구
         </h1>
 
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
 
-      <time title="Created: 2021-04-30 08:43:36 / Modified: 09:38:19" itemprop="dateCreated datePublished" datetime="2021-04-30T08:43:36+09:00">2021-04-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%EC%84%9D/" itemprop="url" rel="index"><span itemprop="name">데이터 분석</span></a>
-        </span>
-    </span>
+              <time title="Created: 2021-04-30 08:43:36 / Modified: 16:28:36" itemprop="dateCreated datePublished" datetime="2021-04-30T08:43:36+09:00">2021-04-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%EC%84%9D/" itemprop="url" rel="index"><span itemprop="name">데이터 분석</span></a>
+                </span>
+            </span>
 
-  
-</div>
+          
 
         </div>
       </header>
@@ -277,30 +212,23 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h3> 분석 환경 </h3>
-<h4> 시스템 :  
-</h4>
-    <ol> AMD Ryzen 7 3700X 8-Core Processor 3.59 GHz </ol>
-    <ol> 32GB RAM </ol>
-    <ol> Windows 10 Pro </ol>
-     
-<h4> 그래픽 카드 : 
-</h4>
-    <ol> NVIDIA GeForce RTX 2060 </ol>
 
-<h3> 분석 도구 </h3>
-<h4> Python :
-</h4>
-    <ol> Anaconda </ol>
-    <ol> Jupyter Lab </ol>
-    <ol> PyCharm </ol>
-<h4> R :
-</h4>
-    <ol> Rstudio </ol>
-<h4> SQL(Oracle) :
-</h4>
-    <ol> Oracle SQL Developer </ol>
-<br><br>
+      
+        <h3 id="분석-환경"><a href="#분석-환경" class="headerlink" title="분석 환경"></a>분석 환경</h3><h4 id="시스템"><a href="#시스템" class="headerlink" title="시스템 :"></a>시스템 :</h4><pre><code>AMD Ryzen 7 3700X 8-Core Processor 3.59 GHz
+32GB RAM
+Windows 10 Pro     
+</code></pre>
+<h4 id="그래픽-카드"><a href="#그래픽-카드" class="headerlink" title="그래픽 카드 :"></a>그래픽 카드 :</h4><pre><code> NVIDIA GeForce RTX 2060
+</code></pre>
+<h3 id="분석-도구"><a href="#분석-도구" class="headerlink" title="분석 도구"></a>분석 도구</h3><h4 id="Python"><a href="#Python" class="headerlink" title="Python :"></a>Python :</h4><pre><code>Anaconda
+Jupyter Lab
+PyCharm
+</code></pre>
+<h4 id="R"><a href="#R" class="headerlink" title="R :"></a>R :</h4><pre><code>Rstudio
+</code></pre>
+<h4 id="SQL-Oracle"><a href="#SQL-Oracle" class="headerlink" title="SQL(Oracle) :"></a>SQL(Oracle) :</h4><pre><code>Oracle SQL Developer
+</code></pre>
+<br>
 데이터분석과 사진 편집의 효율을 높이기 위해 구입한 컴퓨터입니다. 
 <br><br>
 초보자의 입장에서 결정한 분석 도구들을 살펴보면,
@@ -313,7 +241,7 @@ SQL은 요즘 선생님께 배우고 있기 때문에(..) Oracle SQL을 사용�
     
     
 
-    <footer class="post-footer">
+      <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/%EB%B6%84%EC%84%9D-%ED%99%98%EA%B2%BD/" rel="tag"># 분석 환경</a>
               <a href="/tags/%EB%B6%84%EC%84%9D-%EB%8F%84%EA%B5%AC/" rel="tag"># 분석 도구</a>
@@ -335,27 +263,29 @@ SQL은 요즘 선생님께 배우고 있기 때문에(..) Oracle SQL을 사용�
 
         
 
-          <div class="post-nav">
-            <div class="post-nav-item">
-                <a href="/2021/04/29/hello-world/" rel="prev" title="Hello World">
-                  <i class="fa fa-chevron-left"></i> Hello World
-                </a>
-            </div>
-            <div class="post-nav-item">
-                <a href="/2021/04/30/%EC%82%AC%EC%A7%84/" rel="next" title="첫 번째 사진">
-                  첫 번째 사진 <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-          </div>
-    </footer>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/04/29/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/04/30/%EC%82%AC%EC%A7%84/" rel="next" title="첫 번째 사진">
+      첫 번째 사진 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
-</div>
+  
+  
+  
 
 
 
-
-
-
+          </div>
+          
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -364,7 +294,7 @@ SQL은 요즘 선생님께 배우고 있기 때문에(..) Oracle SQL을 사용�
       activeClass = localStorage.getItem('comments_active') || activeClass;
     }
     if (activeClass) {
-      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
       if (activeTab) {
         activeTab.click();
       }
@@ -373,19 +303,84 @@ SQL은 요즘 선생님께 배우고 있기 때문에(..) Oracle SQL을 사용�
   if (CONFIG.comments.storage) {
     window.addEventListener('tabs:click', event => {
       if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      const commentClass = event.target.classList[1];
+      let commentClass = event.target.classList[1];
       localStorage.setItem('comments_active', commentClass);
     });
   }
 </script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EB%B6%84%EC%84%9D-%ED%99%98%EA%B2%BD"><span class="nav-number">1.</span> <span class="nav-text">분석 환경</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%EC%8B%9C%EC%8A%A4%ED%85%9C"><span class="nav-number">1.1.</span> <span class="nav-text">시스템 :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EA%B7%B8%EB%9E%98%ED%94%BD-%EC%B9%B4%EB%93%9C"><span class="nav-number">1.2.</span> <span class="nav-text">그래픽 카드 :</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EB%B6%84%EC%84%9D-%EB%8F%84%EA%B5%AC"><span class="nav-number">2.</span> <span class="nav-text">분석 도구</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Python"><span class="nav-number">2.1.</span> <span class="nav-text">Python :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#R"><span class="nav-number">2.2.</span> <span class="nav-text">R :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SQL-Oracle"><span class="nav-number">2.3.</span> <span class="nav-text">SQL(Oracle) :</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">KSlobe</p>
+  <div class="site-description" itemprop="description">제가 가지고 있는 통계 지식과 SPSS, Excel 활용으로는 한계를 느끼고 시작한 블로그입니다. 데이터 분석에 대한 기록과 기분전환용으로 작업한 제 사진들이 업로드 될 예정입니다.</div>
 </div>
-  </main>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
 
-  <footer class="footer">
-    <div class="footer-inner">
 
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
 
 <div class="copyright">
+  
   &copy; 
   <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
@@ -393,15 +388,39 @@ SQL은 요즘 선생님께 배우고 있기 때문에(..) Oracle SQL을 사용�
   </span>
   <span class="author" itemprop="copyrightHolder">KSlobe</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Muse</a>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="external nofollow noopener noreferrer" target="_blank">NexT.Muse</a>
   </div>
 
-    </div>
-  </footer>
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
 
   
-  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
 
   
 
@@ -410,28 +429,35 @@ SQL은 요즘 선생님께 배우고 있기 때문에(..) Oracle SQL을 사용�
 
 
 
+
+
+
+
+
+
+
+
+
   
 
-
-
-
+  
 <script>
 function getExif(target) {
-  const template = "{FocalLength}mm f/{FNumber} {ExposureTime}s";
+  const tags = {"FocalLength":"{value}mm","FNumber":"f/{value}","ExposureTime":"{value}s"};
   EXIF.getData(target, function() {
-    const tags = EXIF.getAllTags(this);
-    let result = template;
+    let result = [];
     for (let [key, value] of Object.entries(tags)) {
-      if (key === 'ExposureTime' && value <= 0.25) {
-        value = '1/' + parseInt(1 / value);
+      let data = EXIF.getTag(this, key);
+      if (key === 'ExposureTime' && data <= 0.25) {
+        data = '1/' + parseInt(1 / data);
       }
-      result = result.replace(`{${key}}`, value);
+      if (data) result.push(value.replace('{value}', data));
     }
-    if (result !== template) {
+    if (result.length > 0) {
       const box = document.createElement('div');
       target.wrap(box);
       box.classList.add('exif-container');
-      box.insertAdjacentHTML('beforeend', `<div class="exif-metabar"><span>${result}</span></div>`);
+      box.insertAdjacentHTML('beforeend', `<div class="exif-metabar"><span>${result.join(' ')}</span></div>`);
     }
   });
 }
