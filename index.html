@@ -150,6 +150,135 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://kslobe.github.io/2021/05/02/football2105/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KSlobe">
+      <meta itemprop="description" content="제가 가지고 있는 통계 지식과 SPSS, Excel 활용으로는 한계를 느끼고 시작한 블로그입니다. 데이터 분석에 대한 기록과 기분전환용으로 작업한 제 사진들이 업로드 될 예정입니다.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="사진 찍는 문과 출신 아재의 데이터 분석 프로젝트">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/02/football2105/" class="post-title-link" itemprop="url">축구팀의 승리와 관련 높은 지표(데이터)를 찾아보기</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-05-02 09:13:13 / Modified: 12:10:47" itemprop="dateCreated datePublished" datetime="2021-05-02T09:13:13+09:00">2021-05-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%EC%84%9D/" itemprop="url" rel="index"><span itemprop="name">데이터 분석</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="궁금했던-것"><a href="#궁금했던-것" class="headerlink" title="궁금했던 것"></a>궁금했던 것</h2><p>축구에서 팀의 한 시즌 승률을 잘 예측할 수 있는 지표는 뭐가 있을까?</p>
+<h2 id="용어-정의"><a href="#용어-정의" class="headerlink" title="용어 정의"></a>용어 정의</h2><p>분석 전에 먼저 용어를 정의하자. </p>
+<p>승률이 뭐지?</p>
+<blockquote>
+<p>승률 = 경기 따위에서, 이기는 비율 (다음 한국어 사전)</p>
+</blockquote>
+<p>실생활에서 사용했던 걸 생각해보면 승률이라는 단어는 아래 두 가지 경우다.</p>
+<pre><code>1. A팀과 B팀의 경기에서 A팀이 이길 확률인가? (추론 통계/예측)
+2. 한 시즌에서 치룬 전체 경기 대비 승리한 비율인가? (기술 통계/설명)
+
+* 추론 통계는 &#39;미래를 예측하는&#39; 분석이고, 기술 통계는 &#39;과거를 설명하는&#39; 분석
+</code></pre>
+<p>한 시즌의 승률이라고 했을 때, 내가 생각했던 것은 2번이었다. </p>
+<p>‘과거’ 한 시즌의 승률 데이터를 잘 예측하는 지표가 어떤 것인지를 알고 싶은 것이니까.. </p>
+<p>지금처럼 아무 데이터가 없고 구할 수 있는 가능성도 낮은 상황에서 예측을 한다는 것은 장님이 코끼리 다리 만지는 것과 다를 게 없다.</p>
+<p>이제 승률은 2번이라고 생각하면서 다음 단계로 나가보자..고 생각했는데, 명확한 분석을 위해서는 승률이라는 단어를 바꿔야 할 것 같다.</p>
+<p>왜냐하면..</p>
+<pre><code>1. 일반적인 축구 지표는 개별 경기(라운드)로 구분되는 데이터들이다.
+2. 그러므로 개별 경기에서 생성되는 지표와 승&amp;(무&amp;패)와의 연관 정도로 분석하는 것이 좋다.       
+3. &#39;승률 = 승리 횟수 / 전체 경기 수&#39;이므로 분석 단위보다 한 단계 더 나아간 용어다.
+</code></pre>
+<br>
+개별 경기에서 2번을 먼저 해보고, 한 시즌 전체의 누적 데이터로 살펴보는 순서로 나아가는 게 좋을 것 같다.
+물론 누적 데이터를 볼 때도 라운드별로 구분해 시계열 분석을 할지 말지도 고민해야겠지만...
+
+
+<h2 id="가설-수립"><a href="#가설-수립" class="headerlink" title="가설 수립"></a>가설 수립</h2><p>일단 처음이니 명확한 가설보다는 자유롭게 생각을 해보자. </p>
+<p>팀이 승리하기 위해서는 어떻게 해야 할까?</p>
+<pre><code>1. 골을 많이 넣으면 될까?
+2. 골을 덜 허용하면 될까?
+3. 주로 사용하는 포메이션의 차이일까?
+4. 시즌 중 포메이션이 변하는 횟수나 시간일까?
+5. 베스트 11의 평균 출전시간일까?
+6. 각 스탯별 리그 타이틀 또는 상위권의 선수들이 존재하는지, 몇 명인지, 팀 전체 스탯 중 개인이 차지하는 스탯의 비율 같은 것일까?
+7. 관중 수나 홈/원정팬들의 비율일까?
+8. 심판의 성향도 영향을 미칠까?
+9. 착용하는 유니폼의 재질?
+10. 축구화 종류?
+</code></pre>
+<p>위와 조금 다른 관점에서 생각한다면, 위의 내용들은 대부분 ‘행위에 대한 결과’ 데이터들이다. </p>
+<p>‘행위’에 집중해서 살펴보면 어떤 것들이 있을까?</p>
+<pre><code>11. 각 선수들의 시간대별 위치(히트맵)와 그 위치에서 행하는 행동의 종류, 성공율, 그리고 각 시점에서의 상대방 정보
+    - 행동이라고 간단하게 썼지만 이건 매우 다양한 변수들로 나눌 수 있다. 슈팅, 드리블, 차단, 각종 패스 등
+12. 실패 후 선수들의 행동변화
+13. 맥락을 고려한 반칙 횟수
+14. 선수들 간의 대화/격려 제스처 횟수
+15. 감독의 전술지시 횟수
+16. 기타 등등..
+
+* 11번을 생각하다보니 관련 데이터들이 있으면 강화학습을 통해 각 시점에서 가장 승률이 높은 행동을 예측해낼 수도 있겠다 싶다. 언젠가는..
+</code></pre>
+<p>사실 이런 저런 변수들을 생각하다보면 끝이 없는 게 사실이라, 결국은 이런 변수들 중에서 승률을 가장 잘 예측할 수 있는 변수들을 선택하거나 변수들을 조합해서 새로운 변수들을 만들어내야 한다.</p>
+<p>직관적으로 생각했을 때 11번이 제일 그럴듯해 보이고, 12번도 괜찮아 보인다.<br>부족한 점이 많겠지만, 일단 11, 12번을 가지고 분석해보려면 데이터는 어떻게 구성해야 할까?</p>
+<h2 id="데이터-구성"><a href="#데이터-구성" class="headerlink" title="데이터 구성"></a>데이터 구성</h2><pre><code>1. 경기 시간을 일정한 단위로 나눈다.
+    - 초로 나누는 게 좋을 것 같다.
+2. 경기장을 일정한 구역(평면좌표)으로 나눈다.
+    - 이건 센티미터가 좋을 듯.. 요즘 분석 영상을 보니 충분히 가능한 것 같더라.
+3. 각 선수들의 행동과 신체데이터 시간과 좌표와 함께 측정한다.
+    - 행동은 위에도 썼지만 다양한 행동들을 개별 변수로 넣고 자동이든 수동이든 체크!
+    - 신체데이터는 혈압, 
+4. 각 선수들의 신체데이터를 시간과 좌표와 함께 측정한다.
+</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://kslobe.github.io/2021/04/30/%ED%95%A0%EC%9D%BC%EB%93%A4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -530,7 +659,7 @@ SQL은 요즘 선생님께 배우고 있기 때문에 Oracle SQL을 사용하고
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -539,7 +668,7 @@ SQL은 요즘 선생님께 배우고 있기 때문에 Oracle SQL을 사용하고
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-count">48</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
